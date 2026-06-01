@@ -1,0 +1,72 @@
+.category-tree
+  list-style: none
+  margin: 0
+  padding: 0
+
+.category-node
+  margin: 2px 0
+  position: relative
+
+.category-toggle
+  display: inline-block
+  width: 16px
+  height: 16px
+  line-height: 16px
+  text-align: center
+  cursor: pointer
+  user-select: none
+  color: color-grey
+  font-size: 10px
+  transition: transform 0.2s ease
+  &:before
+    content: "\f0da"
+    font-family: font-icon
+  .open > &
+    transform: rotate(90deg)
+
+.category-name
+  color: color-link
+  text-decoration: none
+  font-weight: bold
+  &:hover
+    text-decoration: underline
+
+.category-count
+  padding-left: 4px
+  color: color-grey
+  font-size: 0.85em
+  &:before
+    content: "("
+  &:after
+    content: ")"
+
+.category-posts
+  list-style: none
+  margin: 2px 0 2px 20px
+  padding: 0
+  display: none
+  .open > &
+    display: block
+
+.post-leaf
+  margin: 2px 0
+  position: relative
+  padding-left: 12px
+  &:before
+    content: ""
+    position: absolute
+    left: 0
+    top: 8px
+    width: 6px
+    height: 6px
+    border-radius: 50%
+    background: color-border
+  a
+    color: color-sidebar-text
+    text-decoration: none
+    font-size: 0.95em
+    display: block
+    padding: 2px 0
+    &:hover
+      color: color-link
+      text-decoration: none

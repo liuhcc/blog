@@ -1,0 +1,23 @@
+<% if (site.categories.length){ %>
+  <div class="widget-wrap">
+    <h3 class="widget-title"><%= __('categories') %></h3>
+    <div class="widget">
+      <ul class="category-tree">
+        <% site.categories.each(function(category){ %>
+          <li class="category-node">
+            <span class="category-toggle"></span>
+            <a class="category-name" href="<%- url_for(category.path) %>"><%= category.name %></a>
+            <span class="category-count"><%= category.posts.length %></span>
+            <ul class="category-posts">
+              <% category.posts.each(function(post){ %>
+                <li class="post-leaf">
+                  <a href="<%- url_for(post.path) %>" title="<%= post.title %>"><%= post.title %></a>
+                </li>
+              <% }) %>
+            </ul>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+<% } %>

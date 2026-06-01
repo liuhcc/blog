@@ -1,0 +1,11 @@
+<div id="search-overlay" class="search-overlay" data-search-url="<%- url_for('search.json') %>">
+  <div class="search-modal">
+    <div class="search-header">
+      <input type="text" id="search-input" class="search-input" placeholder="<%= __('search') %>..." autocomplete="off">
+      <span id="search-close" class="search-close">&times;</span>
+    </div>
+    <div id="search-results" class="search-results" data-placeholder="<%= __('search') %>">
+      <div class="search-hint"><%= __('search') %></div>
+    </div>
+  </div>
+</div>
