@@ -62,10 +62,10 @@ npx hexo server -p 5000
 ### 1.5 安装必需插件
 
 ```bash
-# Git 部署插件（必备）
+# Git 部署插件（使用 GitHub Actions 则不需要）
 npm install hexo-deployer-git --save
 
-# 本地搜索插件
+# 本地搜索插件（必备）
 npm install hexo-generator-searchdb --save
 ```
 
@@ -783,7 +783,14 @@ tags:
 
 ## 第五部分：推送新博客的标准流程
 
-### 5.1 完整步骤
+### 5.1 分支模型
+
+| 分支 | 存放内容 | 谁写入 |
+|------|---------|--------|
+| `source` | Markdown 源码、配置、主题 | 你 `git push` |
+| `main` | 生成的 HTML 网页 | GitHub Actions 自动写入 |
+
+### 5.2 完整步骤
 
 ```bash
 # 1. 进入项目目录
@@ -799,67 +806,68 @@ npx hexo new "文章标题"
 # 4. 本地预览（验证排版和链接）
 npx hexo server -p 5000
 # 浏览器打开 http://localhost:5000
-# 检查：文章显示、分类树、搜索、图片加载
 
-# 5. 确认无误后，一键部署
-npx hexo deploy
+# 5. 确认无误后，提交并推送
+git add -A
+git commit -m "新增文章：文章标题"
+git push origin source
 ```
 
-### 5.2 部署原理
+推送后 GitHub Actions 自动执行构建和部署，约 1 分钟后网站更新。
 
-`npx hexo deploy` 实际做了三件事：
+### 5.3 部署原理
 
 ```
-hexo generate  →  生成静态 HTML 到 public/
-git commit     →  将 public/ 内容提交到 .deploy_git/
-git push       →  推送到 GitHub blog 仓库 main 分支
+git push source → GitHub Actions 触发 → npm install → npx hexo generate → 推送到 main 分支 → GitHub Pages 生效
 ```
 
-GitHub Pages 检测到 `main` 分支更新后，自动生效（约30秒到1分钟）。
+`.github/workflows/deploy.yml` 文件定义了这条流水线，不需要本地运行 `hexo deploy`。
 
-### 5.3 常用命令速查
+### 5.4 常用命令速查
 
 ```bash
+# 写作
 npx hexo new "标题"          # 创建文章
 npx hexo new page "页面名"   # 创建独立页面
 npx hexo new draft "标题"    # 创建草稿
 npx hexo publish "标题"      # 发布草稿
+
+# 预览
 npx hexo server -p 5000      # 本地预览
 npx hexo generate            # 生成静态文件（不部署）
-npx hexo deploy              # 生成 + 部署（最常用）
 npx hexo clean               # 清理缓存和 public/
-npm run server               # 等同于 npx hexo server
-npm run deploy               # 等同于 npx hexo deploy
+
+# 发布
+git add -A                   # 暂存所有改动
+git commit -m "描述"         # 提交
+git push origin source       # 推送（触发自动部署）
 ```
 
-### 5.4 更新已有文章
+### 5.5 更新已有文章
 
 ```bash
 # 1. 直接编辑 source/_posts/文章.md
 # 2. 本地预览确认
 npx hexo server -p 5000
-# 3. 部署
-npx hexo deploy
+# 3. 提交推送
+git add -A && git commit -m "更新文章：xxx" && git push origin source
 ```
 
-### 5.5 修改配置后如何生效
-
-修改了 `_config.yml` 或主题文件后：
+### 5.6 修改配置后如何生效
 
 ```bash
-# 主题模板/样式有改动时，可能需要清理缓存
-npx hexo clean
-npx hexo server -p 5000      # 预览
-npx hexo deploy              # 部署
+# 主题/配置有改动时
+npx hexo clean               # 清理缓存
+npx hexo server -p 5000      # 本地预览
+# 确认无误
+git add -A && git commit -m "更新配置" && git push origin source
 ```
 
-`hexo clean` 删除 `public/` 和数据库缓存，确保下次生成是全新的。
+### 5.7 首次部署注意事项
 
-### 5.6 部署注意事项
-
-1. **首次部署前**，确保在 GitHub 仓库 `Settings → Pages` 中开启了 Pages（Source 设为 `main` 分支）
-2. 如果 `https://github.com/liuhcc/blog.git` 连接超时，检查网络/代理
-3. LF/CRLF 警告（Windows 环境）不影响功能，可忽略
+1. 在 GitHub 仓库 `Settings → Pages` 中开启 Pages，Source 设为 `main` 分支
+2. 首次推送需要 `git push -u origin source`
+3. 如果 GitHub 连接超时，需要配置代理或 VPN
 
 ---
 
@@ -890,21 +898,25 @@ _config.yml 中的三要素：
 ### 6.3 数据流总览
 
 ```
-source/_posts/*.md  (Markdown 源文件)
+source/_posts/*.md  (你写的 Markdown)
     │
-    ▼  hexo-renderer-marked 解析
+    ▼  git push origin source
     │
-public/  (HTML 静态文件)
+GitHub 仓库 source 分支
     │
-    ▼  hexo-deployer-git 推送
+    ▼  GitHub Actions 自动触发
+    │   (.github/workflows/deploy.yml)
+    │   ├─ npm install
+    │   ├─ hexo generate (hexo-renderer-marked 解析)
+    │   └─ 部署 public/ 到 main 分支
     │
-GitHub blog 仓库 main 分支
+GitHub 仓库 main 分支 (纯 HTML)
     │
     ▼  GitHub Pages 服务
     │
 https://liuhcc.github.io/blog/
 
-同时：
+同时（hexo generate 阶段）：
     │
     ▼  hexo-generator-searchdb
     │
@@ -932,8 +944,7 @@ D:\Code\blog\
 │   │   ├── hello-world.md
 │   │   ├── AI学习笔记.md
 │   │   ├── Java开发技巧.md
-│   │   ├── Hexo博客搭建完整流程.md
-│   │   └── Hexo博客完全指南：从零搭建到深度定制.md
+│   │   └── Hexo博客完全指南.md
 │   └── about/
 │       └── index.md
 ├── themes/
