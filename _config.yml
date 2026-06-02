@@ -6,7 +6,7 @@
 title: liuhuaicai's blog
 subtitle: '技术分享与随笔'
 description: '记录学习与思考'
-keywords:
+keywords: '技术博客,Java,AI,Hexo,编程,开发'
 author: liuhuaicai
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -98,6 +98,18 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: landscape
+
+# Sitemap
+sitemap:
+  path: sitemap.xml
+  # template: ./sitemap_template.xml
+  rel: true
+
+# Feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
 
 # Search
 search:

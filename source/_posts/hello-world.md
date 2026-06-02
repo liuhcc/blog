@@ -1,44 +1,29 @@
 ---
-title: Hello World
+title: 博客上线了
 date: 2026-06-01 23:00:00
 categories: 随笔
 tags:
   - 博客
   - Hexo
 ---
-这是我的第一篇博客文章，使用 Hexo + GitHub Pages 搭建。
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+这是我的第一篇博客文章。经过一番折腾，终于用 Hexo + GitHub Pages 把这个技术博客搭起来了。
 
-## Quick Start
+## 关于这个博客
 
-### Create a new post
+这里主要记录我在工作和学习中的一些技术心得，包括但不限于：
 
-``` bash
-$ hexo new "My New Post"
-```
+- **Java 开发**：工作中积累的实战经验和踩坑记录
+- **AI 学习**：大模型、机器学习相关的学习笔记
+- **工具技巧**：效率工具、开发环境的配置与优化
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+## 为什么选 Hexo
 
-### Run server
+对比了几个静态博客框架后选择了 Hexo：
 
-``` bash
-$ hexo server
-```
+1. **Node.js 生态**，对前端开发者友好
+2. **生成速度快**，文章多了也不卡
+3. **主题可深度定制**，可以按需修改 EJS + Stylus
+4. **Markdown 写作**，配合 VS Code 体验很好
+5. **免费部署到 GitHub Pages**，零成本运行
 
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+后续会把 Hexo 的搭建和定制过程整理成教程，希望能帮到有同样需求的朋友。

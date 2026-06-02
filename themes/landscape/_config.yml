@@ -5,6 +5,9 @@
 menu:
   Home: /
   Archives: /archives
+  Categories: /categories
+  Tags: /tags
+  About: /about
 # RSS link
 rss: /atom.xml
 # Path of title banner image of page top

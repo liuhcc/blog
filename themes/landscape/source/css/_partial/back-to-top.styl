@@ -1,0 +1,26 @@
+#back-to-top
+  position: fixed
+  bottom: 40px
+  right: 30px
+  width: 40px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  background: color-link
+  color: #fff
+  border-radius: 50%
+  cursor: pointer
+  opacity: 0
+  visibility: hidden
+  transform: translateY(10px)
+  transition: all 0.3s ease
+  z-index: 1000
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)
+  &:hover
+    background: darken(color-link, 10%)
+    transform: translateY(-2px)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
+  &.visible
+    opacity: 1
+    visibility: visible
+    transform: translateY(0)

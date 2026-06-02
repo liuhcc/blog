@@ -2,6 +2,9 @@
   <div class="article-meta">
     <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
     <%- partial('post/category') %>
+    <% if (!index) { %>
+      <span class="article-reading-time"><span class="fa fa-book"></span> <%= reading_time(post.content) %></span>
+    <% } %>
   </div>
   <div class="article-inner">
     <%- partial('post/gallery') %>

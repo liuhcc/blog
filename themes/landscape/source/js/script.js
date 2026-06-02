@@ -205,6 +205,50 @@
     $container.removeClass('mobile-nav-on');
   });
 
+  // Dark mode
+  var $darkModeBtn = $('.nav-dark-mode-btn');
+  var $darkIcon = $darkModeBtn.find('.fa');
+  var isDark = localStorage.getItem('dark-mode') === 'true';
+
+  if (isDark) {
+    $('body').addClass('dark-mode');
+    $darkIcon.removeClass('fa-moon-o').addClass('fa-sun-o');
+  }
+
+  $darkModeBtn.on('click', function() {
+    $('body').toggleClass('dark-mode');
+    var dark = $('body').hasClass('dark-mode');
+    localStorage.setItem('dark-mode', dark);
+    if (dark) {
+      $darkIcon.removeClass('fa-moon-o').addClass('fa-sun-o');
+    } else {
+      $darkIcon.removeClass('fa-sun-o').addClass('fa-moon-o');
+    }
+  });
+
+  // Reading progress
+  var $progressBar = $('#reading-progress-bar');
+  $(window).on('scroll', function() {
+    var scrollTop = $(this).scrollTop();
+    var docHeight = $(document).height();
+    var winHeight = $(this).height();
+    var scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+    $progressBar.css('width', Math.min(scrollPercent, 100) + '%');
+  });
+
+  // Back to top
+  var $backToTop = $('#back-to-top');
+  $(window).on('scroll', function() {
+    if ($(this).scrollTop() > 300) {
+      $backToTop.addClass('visible');
+    } else {
+      $backToTop.removeClass('visible');
+    }
+  });
+  $backToTop.on('click', function() {
+    $('html, body').animate({ scrollTop: 0 }, 300);
+  });
+
   // Category tree toggle
   $('.category-toggle').on('click', function(e){
     e.preventDefault();
