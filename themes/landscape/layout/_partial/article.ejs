@@ -5,6 +5,9 @@
     <% if (!index) { %>
       <span class="article-reading-time"><span class="fa fa-book"></span> <%= reading_time(post.content) %></span>
     <% } %>
+    <% if (index) { %>
+      <span class="article-toggle-btn"><span class="fa fa-chevron-up"></span> 收起</span>
+    <% } %>
   </div>
   <div class="article-inner">
     <%- partial('post/gallery') %>
@@ -14,13 +17,14 @@
       </header>
     <% } %>
     <div class="e-content article-entry" itemprop="articleBody">
+      <% if (!index && post.toc !== false) { %>
+        <%- partial('_partial/toc', {post: post}) %>
+      <% } %>
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
-        <% if (theme.excerpt_link){ %>
-          <p class="article-more-link">
-            <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
-          </p>
-        <% } %>
+        <p class="article-more-link">
+          <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+        </p>
       <% } else { %>
         <%- post.content %>
       <% } %>

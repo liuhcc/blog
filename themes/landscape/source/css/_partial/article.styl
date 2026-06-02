@@ -32,6 +32,25 @@
   .fa
     margin-right: 4px
 
+.article-toggle-btn
+  float: right
+  color: color-grey
+  font-size: 0.85em
+  cursor: pointer
+  padding: 2px 8px
+  border: 1px solid color-border
+  border-radius: 4px
+  transition: all 0.2s
+  .fa
+    margin-right: 2px
+    transition: transform 0.3s
+  &:hover
+    color: color-link
+    border-color: color-link
+  .collapsed &
+    .fa
+      transform: rotate(180deg)
+
 .article-header
   padding: article-padding article-padding 0
 

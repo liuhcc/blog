@@ -4,22 +4,40 @@
     $input = $('#search-input'),
     $results = $('#search-results'),
     searchData = null,
+    searchLoaded = false,
     activeIndex = -1;
 
-  var loadSearchData = function() {
-    if (searchData) return;
-    $.getJSON($overlay.data('search-url'), function(data) {
+  var loadSearchData = function(callback) {
+    if (searchLoaded && searchData) {
+      if (callback) callback();
+      return;
+    }
+    var url = $overlay.data('search-url');
+    if (!url) return;
+    $.getJSON(url, function(data) {
       searchData = data;
+      searchLoaded = true;
+      if (callback) callback();
+    }).fail(function() {
+      searchLoaded = true;
+      searchData = [];
+      if (callback) callback();
     });
   };
 
+  // Preload search data
+  $(function() {
+    loadSearchData();
+  });
+
   var renderResults = function(items, query) {
     if (!items || items.length === 0) {
-      $results.html('<div class="search-no-results">' + ($input.val() ? 'No results found' : $results.data('placeholder')) + '</div>');
+      $results.html('<div class="search-no-results">' + ($input.val() ? '没有找到结果' : $results.data('placeholder')) + '</div>');
       return;
     }
     var html = '';
-    var regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    var escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    var regex = new RegExp('(' + escapedQuery + ')', 'gi');
     $.each(items, function(i, item) {
       var title = item.title.replace(regex, '<span class="search-highlight">$1</span>');
       var date = '';
@@ -30,8 +48,8 @@
       html += '<a class="search-result-item" href="' + item.url + '">';
       html += '<div class="search-result-title">' + title + '</div>';
       html += '<div class="search-result-meta">';
-      if (item.categories && item.categories.length) html += '<span>' + item.categories[0] + '</span>';
-      if (date) html += '<span>' + date + '</span>';
+      if (item.categories && item.categories.length) html += '<span class="fa fa-folder"></span> ' + item.categories[0];
+      if (date) html += '<span class="fa fa-calendar"></span> ' + date;
       html += '</div></a>';
     });
     $results.html(html);
@@ -39,7 +57,10 @@
   };
 
   var doSearch = function(query) {
-    if (!searchData) return;
+    if (!searchData) {
+      loadSearchData(function() { doSearch(query); });
+      return;
+    }
     query = query.trim().toLowerCase();
     if (!query) {
       $results.html('<div class="search-hint">' + $results.data('placeholder') + '</div>');
@@ -57,9 +78,10 @@
   };
 
   $('.nav-search-btn').on('click', function(){
-    loadSearchData();
     $overlay.addClass('active');
     $results.html('<div class="search-hint">' + $results.data('placeholder') + '</div>');
+    $input.val('');
+    loadSearchData();
     setTimeout(function(){ $input.focus(); }, 100);
   });
 
@@ -85,11 +107,17 @@
       e.preventDefault();
       activeIndex = Math.min(activeIndex + 1, $items.length - 1);
       $items.removeClass('active').eq(activeIndex).addClass('active');
+      if (activeIndex >= 0) {
+        $items.eq(activeIndex)[0].scrollIntoView({block: 'nearest'});
+      }
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       activeIndex = Math.max(activeIndex - 1, -1);
       $items.removeClass('active');
-      if (activeIndex >= 0) $items.eq(activeIndex).addClass('active');
+      if (activeIndex >= 0) {
+        $items.eq(activeIndex).addClass('active');
+        $items.eq(activeIndex)[0].scrollIntoView({block: 'nearest'});
+      }
     } else if (e.key === 'Enter' && activeIndex >= 0) {
       e.preventDefault();
       window.location.href = $items.eq(activeIndex).attr('href');
@@ -98,6 +126,39 @@
 
   $input.on('input', function(){
     doSearch($(this).val());
+  });
+
+  // Article collapse/expand on index
+  $('.article-toggle-btn').on('click', function() {
+    var $article = $(this).closest('.article');
+    var $entry = $article.find('.article-entry');
+    var $btn = $(this);
+    if ($article.hasClass('collapsed')) {
+      $entry.slideDown(200);
+      $article.removeClass('collapsed');
+      $btn.html('<span class="fa fa-chevron-up"></span> 收起');
+    } else {
+      $entry.slideUp(200);
+      $article.addClass('collapsed');
+      $btn.html('<span class="fa fa-chevron-down"></span> 展开');
+    }
+  });
+
+  // TOC toggle
+  $('.toc-header').on('click', function() {
+    $(this).closest('.toc-wrap').toggleClass('collapsed');
+  });
+
+  // TOC smooth scroll
+  $('.toc-link').on('click', function(e) {
+    e.preventDefault();
+    var target = $(this).attr('href');
+    if (target) {
+      var $target = $(target);
+      if ($target.length) {
+        $('html, body').animate({ scrollTop: $target.offset().top - 60 }, 300);
+      }
+    }
   });
 
   // Share

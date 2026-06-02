@@ -1,0 +1,18 @@
+<% var headings = toc_generate(post.content); %>
+<% if (headings.length > 1) { %>
+<div class="toc-wrap">
+  <div class="toc-header">
+    <span class="toc-title"><span class="fa fa-list"></span> 目录</span>
+    <span class="toc-toggle"><span class="fa fa-chevron-up"></span></span>
+  </div>
+  <div class="toc-body">
+    <ul class="toc-list">
+      <% headings.forEach(function(h) { %>
+        <li class="toc-item toc-level-<%= h.level %>">
+          <a href="#<%= h.id %>" class="toc-link"><%= h.text %></a>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</div>
+<% } %>
