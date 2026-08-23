@@ -48,9 +48,7 @@ sidebar: right
 # Widgets displaying in sidebar
 widgets:
 - category_tree
-- category
 - tag
-- tagcloud
 - archive
 - recent_posts
 
@@ -69,7 +67,7 @@ recent_posts_limits: 5
 google_analytics:
 gauges_analytics:
 # Favicon path
-favicon: /favicon.png
+favicon: /favicon.svg
 # Twitter ID
 twitter:
 fb_admins:

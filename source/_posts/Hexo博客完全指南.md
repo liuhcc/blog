@@ -1,6 +1,7 @@
 ---
 title: Hexo博客完全指南：从零搭建到深度定制
 date: 2026-06-02 18:00:00
+description: '从零搭建并深度定制 Hexo 技术博客，涵盖 GitHub Pages 部署、搜索与日常写作流程。'
 categories: Hexo
 tags:
   - Hexo
@@ -111,10 +112,10 @@ npm install hexo-generator-searchdb --save
 
 ```yaml
 # ========== 站点信息 ==========
-title: liuhuaicai's blog          # 浏览器标签栏显示的标题
+title: liuhcc's blog              # 浏览器标签栏显示的标题
 subtitle: '技术分享与随笔'         # 首页副标题
 description: '记录学习与思考'      # SEO 描述
-author: liuhuaicai                # 作者名
+author: liuhcc                    # 作者名
 language: zh-CN                   # 界面语言（中文）
 timezone: 'Asia/Shanghai'         # 时区
 
@@ -381,7 +382,7 @@ Hexo 使用 EJS（Embedded JavaScript）作为模板引擎。以下是常用语�
 
 | 变量 | 说明 | 示例 |
 |------|------|------|
-| `config.title` | 站点标题 | `liuhuaicai's blog` |
+| `config.title` | 站点标题 | `liuhcc's blog` |
 | `config.url` | 站点 URL | `https://liuhcc.github.io/blog` |
 | `config.root` | 资源根路径 | `/blog/` |
 | `theme.sidebar` | 侧边栏位置 | `right` |

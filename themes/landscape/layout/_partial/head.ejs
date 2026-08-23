@@ -20,6 +20,13 @@
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <% if (config.keywords) { %><meta name="keywords" content="<%= config.keywords %>"><% } %>
+  <meta name="theme-color" content="#258fb8">
+  <%
+    var rootPath = config.root.replace(/\/$/, '');
+    var canonicalPath = url_for(page.path || '').slice(rootPath.length);
+  %>
+  <link rel="canonical" href="<%= config.url.replace(/\/$/, '') + canonicalPath %>">
   <%- open_graph({twitter_id: theme.twitter, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (config.feed) { %>
     <%- feed_tag() %>
@@ -29,11 +36,12 @@
   <% if (theme.favicon){ %>
     <%- favicon_tag(theme.favicon) %>
   <% } %>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <% if (config.highlight.enable){ %>
     <%- css('https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css') %>
   <% } %>
   <%- css('css/style') %>
-  <% if (theme.fancybox){ %>
+  <% if (theme.fancybox && is_post()){ %>
     <%- css('fancybox/jquery.fancybox.min.css') %>
   <% } %>
   <%- css('https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css') %>

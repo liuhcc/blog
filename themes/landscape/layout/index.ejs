@@ -1,1 +1,23 @@
+<!-- Welcome / Hero Section -->
+<div class="home-welcome">
+  <div class="home-welcome-inner">
+    <h1 class="home-welcome-title"><%= config.title %></h1>
+    <p class="home-welcome-subtitle"><%= config.subtitle || config.description %></p>
+    <% if (config.description && config.description !== config.subtitle) { %>
+      <p class="home-welcome-desc"><%= config.description %></p>
+    <% } %>
+    <div class="home-welcome-stats">
+      <span class="home-stat"><span class="home-stat-num"><%= site.posts.length %></span> 篇文章</span>
+      <span class="home-stat"><span class="home-stat-num"><%= site.tags.length %></span> 个标签</span>
+      <span class="home-stat"><span class="home-stat-num"><%= site.categories.length %></span> 个分类</span>
+    </div>
+  </div>
+</div>
+
+<!-- Recent Posts Header -->
+<div class="home-posts-header">
+  <h2 class="home-posts-title">最新文章</h2>
+</div>
+
+<!-- Post List -->
 <%- partial('_partial/archive', {expand: true, index: true}) %>

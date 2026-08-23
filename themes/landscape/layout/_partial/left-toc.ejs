@@ -1,0 +1,52 @@
+<%
+var headings = toc_generate(post.content);
+if (headings.length > 1) {
+  // Build tree structure
+  var tree = [];
+  var stack = [{children: tree, level: 0}];
+  headings.forEach(function(h) {
+    var node = {level: h.level, id: h.id, text: h.text, children: []};
+    // Find the right parent: pop until stack top's level < current level
+    while (stack.length > 0 && stack[stack.length - 1].level >= h.level) {
+      stack.pop();
+    }
+    // Add to parent's children
+    var parent = stack[stack.length - 1];
+    if (parent) {
+      parent.children.push(node);
+    }
+    // Push current node as potential parent for next headings
+    stack.push(node);
+  });
+
+  var renderTree = function(nodes) {
+    if (!nodes || nodes.length === 0) return '';
+    var html = '<ul class="left-toc-sublist">';
+    nodes.forEach(function(node) {
+      var hasChildren = node.children && node.children.length > 0;
+      html += '<li class="left-toc-item toc-level-' + node.level + '">';
+      html += '<div class="left-toc-item-row">';
+      html += '<a href="#' + node.id + '" class="left-toc-link" data-toc-level="' + node.level + '">' + node.text + '</a>';
+      if (hasChildren) {
+        html += '<span class="toc-toggle-icon"><i class="fa fa-chevron-down"></i></span>';
+      }
+      html += '</div>';
+      if (hasChildren) {
+        html += renderTree(node.children);
+      }
+      html += '</li>';
+    });
+    html += '</ul>';
+    return html;
+  };
+%>
+<aside id="left-toc">
+  <div class="left-toc-header">
+    <span class="left-toc-title"><span class="fa fa-list"></span> 目录</span>
+  </div>
+  <nav class="left-toc-nav">
+    <%- renderTree(tree) %>
+  </nav>
+  <div class="toc-resize-handle"></div>
+</aside>
+<% } %>

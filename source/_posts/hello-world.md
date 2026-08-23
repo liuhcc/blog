@@ -1,6 +1,7 @@
 ---
 title: 博客上线了
 date: 2026-06-01 23:00:00
+description: '记录使用 Hexo 与 GitHub Pages 搭建个人技术博客的起点，以及后续内容方向。'
 categories: 随笔
 tags:
   - 博客

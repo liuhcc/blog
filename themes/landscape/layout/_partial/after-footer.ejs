@@ -15,7 +15,7 @@
 
 <%- js('js/jquery-3.6.4.min.js') %>
 
-<% if (theme.fancybox){ %>
+<% if (theme.fancybox && is_post()){ %>
   <%- js('fancybox/jquery.fancybox.min.js') %>
 <% } %>
 
@@ -46,4 +46,4 @@
 <% } %>
 <div id="reading-progress"><div id="reading-progress-bar"></div></div>
 <%- partial('_partial/search-modal') %>
-<div id="back-to-top"><span class="fa fa-chevron-up"></span></div>
+<button id="back-to-top" type="button" aria-label="返回顶部"><span class="fa fa-chevron-up"></span></button>

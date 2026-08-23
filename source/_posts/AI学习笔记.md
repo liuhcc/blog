@@ -1,6 +1,7 @@
 ---
 title: AI学习笔记
 date: 2026-06-01 23:21:03
+description: '整理大语言模型、AI 编程工具与本地模型部署等方向的持续学习笔记。'
 categories: AI
 tags:
   - AI

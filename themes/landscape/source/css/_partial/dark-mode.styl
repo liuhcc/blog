@@ -173,3 +173,54 @@ body.dark-mode
 
   .search-header
     border-bottom-color: #30363d
+
+  #left-toc
+    background: #161b22
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3)
+
+  .left-toc-header
+    border-bottom-color: #30363d
+
+  .left-toc-title
+    color: #e6e6e6
+    .fa
+      color: #58a6ff
+
+  .left-toc-nav
+    &::-webkit-scrollbar-thumb
+      background: #30363d
+
+  .left-toc-link
+    color: #8b949e
+    &:hover
+      color: #58a6ff
+      background: #21262d
+    &.active
+      color: #58a6ff
+      background: #1a2a3e
+      border-left-color: #58a6ff
+    &.toc-level-1
+      color: #e6e6e6
+      &.active
+        color: #58a6ff
+
+  .toc-toggle-icon
+    color: #6e7681
+    &:hover
+      color: #58a6ff
+      background: #21262d
+
+  .left-toc-level-3 .left-toc-link
+    color: #6e7681
+
+  .toc-resize-handle:hover
+    background: rgba(88, 166, 255, 0.25)
+
+  body.toc-resizing .toc-resize-handle
+    background: rgba(88, 166, 255, 0.45)
+
+  .sidebar-resize-handle:hover
+    background: rgba(88, 166, 255, 0.25)
+
+  body.sidebar-resizing .sidebar-resize-handle
+    background: rgba(88, 166, 255, 0.45)

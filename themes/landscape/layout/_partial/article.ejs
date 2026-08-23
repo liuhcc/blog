@@ -20,10 +20,14 @@
       <% if (!index && post.toc !== false) { %>
         <%- partial('_partial/toc', {post: post}) %>
       <% } %>
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
+      <% if (index){ %>
+        <% if (post.excerpt){ %>
+          <%- post.excerpt %>
+        <% } else { %>
+          <p class="article-excerpt"><%= auto_excerpt(post.content, 300) %></p>
+        <% } %>
         <p class="article-more-link">
-          <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+          <a href="<%- url_for(post.path) %>"><%= theme.excerpt_link %></a>
         </p>
       <% } else { %>
         <%- post.content %>

@@ -1,0 +1,216 @@
+// Post layout with left TOC — responsive breakpoints
+.outer.post-layout
+  // 768-1023px: TOC + main (sidebar hidden)
+  @media screen and (min-width: 768px) and (max-width: 1023px)
+    display: flex
+    align-items: flex-start
+    padding: 0 16px
+    #main
+      float: none
+      display: block
+      width: auto
+      margin: 0
+      flex: 1
+      min-width: 0
+    #sidebar
+      display: none
+    .toc-wrap
+      display: none
+
+  // >=1024px: TOC + main + sidebar
+  @media screen and (min-width: 1024px)
+    display: flex
+    align-items: flex-start
+    padding: 30px 24px 0
+    max-width: 1440px
+    #main
+      float: none
+      display: block
+      width: auto
+      margin: 0
+      flex: 1
+      min-width: 0
+    #sidebar
+      float: none
+      display: block
+      width: 250px
+      margin: 0 0 0 24px
+      flex-shrink: 0
+      position: sticky
+      top: 20px
+      max-height: calc(100vh - 60px)
+      overflow-y: auto
+      &::-webkit-scrollbar
+        display: none
+      scrollbar-width: none
+      -ms-overflow-style: none
+      .widget-wrap
+        margin-top: 28px
+      .widget-wrap:last-child
+        margin-bottom: 0
+    .toc-wrap
+      display: none
+
+// Left TOC
+#left-toc
+  display: none
+  @media screen and (min-width: 768px)
+    display: flex
+    flex-direction: column
+    position: sticky
+    top: 20px
+    flex-shrink: 0
+    margin-right: 24px
+    max-height: calc(100vh - 60px)
+    background: #fff
+    border-radius: 8px
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08)
+    z-index: 10
+    overflow: hidden
+    width: 200px
+    // Align TOC top with article-inner block (skip article-meta height)
+    margin-top: 28px
+
+  @media screen and (min-width: 1024px)
+    width: 240px
+
+.left-toc-header
+  flex-shrink: 0
+  padding: 14px 18px 10px
+  border-bottom: 1px solid #eee
+
+.left-toc-title
+  font-size: 15px
+  font-weight: 700
+  color: #333
+  .fa
+    margin-right: 6px
+    color: #258fb8
+
+.left-toc-nav
+  flex: 1
+  overflow-y: auto
+  overflow-x: hidden
+  padding: 6px 0
+  &::-webkit-scrollbar
+    width: 4px
+  &::-webkit-scrollbar-thumb
+    background: #d0d0d0
+    border-radius: 2px
+  &::-webkit-scrollbar-track
+    background: transparent
+
+// Nested list
+.left-toc-sublist
+  list-style: none
+  margin: 0
+  padding: 0
+
+.left-toc-item
+  margin: 0
+  &.collapsed
+    > .left-toc-sublist
+      display: none
+    > .left-toc-item-row .toc-toggle-icon .fa
+      transform: rotate(-90deg)
+
+.left-toc-item-row
+  display: flex
+  align-items: center
+  position: relative
+
+.left-toc-link
+  flex: 1
+  display: block
+  padding: 6px 18px
+  font-size: 13px
+  color: #555
+  text-decoration: none
+  border-left: 3px solid transparent
+  transition: all 0.2s ease
+  line-height: 1.6
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  min-width: 0
+  &:hover
+    color: #258fb8
+    background: #f5f7fa
+  &.active
+    color: #258fb8
+    background: #eef6fb
+    border-left-color: #258fb8
+    font-weight: 600
+
+  &.toc-level-1
+    font-weight: 600
+    font-size: 14px
+    color: #222
+    padding-top: 8px
+    padding-bottom: 8px
+    &.active
+      color: #258fb8
+
+  &.toc-level-2
+    padding-left: 32px
+    font-size: 13px
+
+  &.toc-level-3
+    padding-left: 48px
+    font-size: 12px
+    color: #777
+
+.toc-toggle-icon
+  flex-shrink: 0
+  width: 24px
+  height: 24px
+  display: flex
+  align-items: center
+  justify-content: center
+  cursor: pointer
+  color: #999
+  font-size: 10px
+  border-radius: 4px
+  margin-right: 4px
+  transition: transform 0.2s ease
+  &:hover
+    color: #258fb8
+    background: #f0f0f0
+  .fa
+    transition: transform 0.25s ease
+
+// TOC resize handle
+.toc-resize-handle
+  position: absolute
+  right: 0
+  top: 0
+  bottom: 0
+  width: 5px
+  cursor: col-resize
+  z-index: 20
+  background: transparent
+  transition: background 0.2s
+  &:hover
+    background: rgba(37, 143, 184, 0.2)
+  body.toc-resizing &
+    background: rgba(37, 143, 184, 0.4)
+
+// Sidebar resize handle
+.sidebar-resize-handle
+  display: none
+  .post-layout &
+    @media screen and (min-width: 1024px)
+      display: block
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      width: 5px
+      cursor: col-resize
+      z-index: 20
+      background: transparent
+      transition: background 0.2s
+      &:hover
+        background: rgba(37, 143, 184, 0.2)
+      body.sidebar-resizing &
+        background: rgba(37, 143, 184, 0.4)

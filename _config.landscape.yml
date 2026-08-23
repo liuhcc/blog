@@ -13,9 +13,8 @@ menu:
 # ===============
 sidebar: right
 widgets:
-- category
+- category_tree
 - tag
-- tagcloud
 - archive
 - recent_posts
 
@@ -42,4 +41,4 @@ links:
 # Footer
 # ===============
 copyright: |-
-  &copy; 2026 liuhuaicai | Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+  &copy; 2026 liuhcc | Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>

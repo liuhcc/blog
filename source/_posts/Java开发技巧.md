@@ -1,6 +1,7 @@
 ---
 title: Java开发技巧
 date: 2026-06-01 23:21:05
+description: '分享 Spring Boot、JVM、并发编程与工程工具链等 Java 开发实践。'
 categories: Java
 tags:
   - Java

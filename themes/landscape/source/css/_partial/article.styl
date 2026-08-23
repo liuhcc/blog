@@ -1,5 +1,7 @@
 .article
   margin: block-margin 0
+  .post-layout &
+    margin-top: 0
 
 .article-inner
   @extend $block
@@ -69,6 +71,11 @@
   clearfix()
   color: color-default
   padding: 0 article-padding
+  .post-layout &
+    padding: 0 24px
+  // Hide the first h1 in content body — it duplicates the article title from frontmatter
+  & > h1:first-of-type
+    display: none
   p, table
     line-height: line-height
     margin: line-height 0

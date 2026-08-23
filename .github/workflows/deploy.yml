@@ -3,9 +3,15 @@ name: Deploy Blog
 on:
   push:
     branches: [ source ]
+  pull_request:
+    branches: [ source ]
 
 permissions:
   contents: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -18,12 +24,13 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Generate static files
         run: npx hexo generate
 
       - name: Deploy to GitHub Pages
+        if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
