@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: liuhcc's blog
-subtitle: '技术分享与随笔'
-description: '记录学习与思考'
+title: 代码与智能的实践笔记
+subtitle: '记录技术探索、工程实践与 AI 学习'
+description: '记录技术探索、工程实践与 AI 学习'
 keywords: '技术博客,Java,AI,Hexo,编程,开发'
 author: liuhcc
 language: zh-CN
