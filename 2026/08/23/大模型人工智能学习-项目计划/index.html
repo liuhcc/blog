@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>大模型人工智能学习：项目计划 | 代码与智能的实践笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="技术博客,Java,AI,Hexo,编程,开发">
+  <meta name="theme-color" content="#258fb8">
+  
+  <link rel="canonical" href="https://liuhcc.github.io/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/">
+  <meta name="description" content="以 25 周、每周 27.5 小时的节奏，从 Python 基础推进到可部署 AI Agent 项目。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大模型人工智能学习：项目计划">
+<meta property="og:url" content="https://liuhcc.github.io/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/index.html">
+<meta property="og:site_name" content="代码与智能的实践笔记">
+<meta property="og:description" content="以 25 周、每周 27.5 小时的节奏，从 Python 基础推进到可部署 AI Agent 项目。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-08-23T14:10:00.000Z">
+<meta property="article:modified_time" content="2026-08-23T14:25:31.274Z">
+<meta property="article:author" content="liuhcc">
+<meta property="article:tag" content="Agent">
+<meta property="article:tag" content="RAG">
+<meta property="article:tag" content="LLM">
+<meta property="article:tag" content="学习计划">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="代码与智能的实践笔记" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.svg">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">代码与智能的实践笔记</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">记录技术探索、工程实践与 AI 学习</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon" href="#" aria-label="打开导航菜单"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/blog/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/blog/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+          <a class="main-nav-link" href="/blog/projects/llm-ai-study/">Projects</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          
+            <a class="nav-icon" target="_blank" rel="noopener" href="https://github.com/liuhcc"><span class="fa fa-github"></span></a>
+          
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" href="#" title="搜索" aria-label="搜索"><span class="fa fa-search"></span></a>
+        <a class="nav-icon nav-dark-mode-btn" href="#" title="切换深色模式" aria-label="切换深色模式"><span class="fa fa-moon-o"></span></a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer post-layout">
+        
+          
+<aside id="left-toc">
+  <div class="left-toc-header">
+    <span class="left-toc-title"><span class="fa fa-list"></span> 目录</span>
+  </div>
+  <nav class="left-toc-nav">
+    <ul class="left-toc-sublist"><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#项目目标" class="left-toc-link" data-toc-level="2">项目目标</a></div></li><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#每周节奏" class="left-toc-link" data-toc-level="2">每周节奏</a></div></li><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#第-1-9-周：基础与模型能力" class="left-toc-link" data-toc-level="2">第 1-9 周：基础与模型能力</a></div></li><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#第-10-17-周：大模型应用核心" class="left-toc-link" data-toc-level="2">第 10-17 周：大模型应用核心</a></div></li><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#第-18-25-周：Agent-项目与交付" class="left-toc-link" data-toc-level="2">第 18-25 周：Agent 项目与交付</a></div></li><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#作品集与调整规则" class="left-toc-link" data-toc-level="2">作品集与调整规则</a></div></li></ul>
+  </nav>
+  <div class="toc-resize-handle"></div>
+</aside>
+
+
+        
+        <section id="main"><article id="post-大模型人工智能学习-项目计划" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/" class="article-date">
+  <time class="dt-published" datetime="2026-08-23T14:10:00.000Z" itemprop="datePublished">2026-08-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/AI/">AI</a>►<a class="article-category-link" href="/blog/categories/AI/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0/">大模型人工智能学习</a>
+  </div>
+
+    
+      <span class="article-reading-time"><span class="fa fa-book"></span> 2 min</span>
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      大模型人工智能学习：项目计划
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+
+<div class="toc-wrap">
+  <div class="toc-header">
+    <span class="toc-title"><span class="fa fa-list"></span> 目录</span>
+    <span class="toc-toggle"><span class="fa fa-chevron-up"></span></span>
+  </div>
+  <div class="toc-body">
+    <ul class="toc-list">
+      
+        <li class="toc-item toc-level-2">
+          <a href="#项目目标" class="toc-link">项目目标</a>
+        </li>
+      
+        <li class="toc-item toc-level-2">
+          <a href="#每周节奏" class="toc-link">每周节奏</a>
+        </li>
+      
+        <li class="toc-item toc-level-2">
+          <a href="#第-1-9-周：基础与模型能力" class="toc-link">第 1-9 周：基础与模型能力</a>
+        </li>
+      
+        <li class="toc-item toc-level-2">
+          <a href="#第-10-17-周：大模型应用核心" class="toc-link">第 10-17 周：大模型应用核心</a>
+        </li>
+      
+        <li class="toc-item toc-level-2">
+          <a href="#第-18-25-周：Agent-项目与交付" class="toc-link">第 18-25 周：Agent 项目与交付</a>
+        </li>
+      
+        <li class="toc-item toc-level-2">
+          <a href="#作品集与调整规则" class="toc-link">作品集与调整规则</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+      
+      
+        <h2 id="项目目标"><a href="#项目目标" class="headerlink" title="项目目标"></a>项目目标</h2><p>以真实项目为载体学习大模型开发，而不是只停留在观看课程或调用 API。计划从 2026-08-24 开始，25 周内完成 3 个可展示项目；每个阶段都需要有可运行样例、清晰输入输出和复盘记录。</p>
+<h2 id="每周节奏"><a href="#每周节奏" class="headerlink" title="每周节奏"></a>每周节奏</h2><p>每周计划投入 27.5 小时：工作日安排新知识、跟敲、练习和纠错；周末用于项目深度开发、演示和复盘。每次学习前后各保留 15 分钟用于回顾与提交记录，视频学习控制在 40% 以内，编码、调试和复盘不少于 60%。</p>
+<h2 id="第-1-9-周：基础与模型能力"><a href="#第-1-9-周：基础与模型能力" class="headerlink" title="第 1-9 周：基础与模型能力"></a>第 1-9 周：基础与模型能力</h2><ul>
+<li>第 1-2 周完成 Python 核心：文件处理、异常处理、面向对象和 HTTP 调用。</li>
+<li>第 3 周补齐算法与数据结构：复杂度、常用容器和针对性练习。</li>
+<li>第 4-5 周完成 Linux、Shell、Git、MySQL 与 CRUD API。</li>
+<li>第 6-8 周学习 NumPy、Pandas 和机器学习、深度学习必要原理。</li>
+<li>第 9 周跑通 BERT 分类与 FastAPI 推理接口，理解 tokenizer 和评估。</li>
+</ul>
+<h2 id="第-10-17-周：大模型应用核心"><a href="#第-10-17-周：大模型应用核心" class="headerlink" title="第 10-17 周：大模型应用核心"></a>第 10-17 周：大模型应用核心</h2><ul>
+<li>第 10-12 周独立完成带引用的 RAG，并实现至少一个 MCP tool、server 或 client。</li>
+<li>第 13 周使用 Coze 或 Dify 搭建工作流，并通过 Python 调用，明确低代码平台的适用边界。</li>
+<li>第 14 周跑通 LoRA 或 QLoRA 示例，理解微调与 RAG 的选型边界。</li>
+<li>第 15-17 周完成 LangGraph 的状态、分支、重试、检查点、记忆与人机中断练习。</li>
+</ul>
+<h2 id="第-18-25-周：Agent-项目与交付"><a href="#第-18-25-周：Agent-项目与交付" class="headerlink" title="第 18-25 周：Agent 项目与交付"></a>第 18-25 周：Agent 项目与交付</h2><ul>
+<li>第 18-20 周复现并改造点餐 Agent，串联 FastAPI、工具调用、向量检索和数据库。</li>
+<li>第 21-23 周复现并改造问数 Agent，完成受控 Text-to-SQL 与结果解释。</li>
+<li>第 24-25 周完成个人项目交付：认证、日志、追踪、评测集、异常处理、Docker 部署、README 和演示视频。</li>
+</ul>
+<h2 id="作品集与调整规则"><a href="#作品集与调整规则" class="headerlink" title="作品集与调整规则"></a>作品集与调整规则</h2><ul>
+<li>三个作品集分别聚焦企业知识库 RAG、垂直领域工具 Agent、数据问答或业务自动化 Agent。</li>
+<li>每周以计划工时与完成标准衡量完成度：90% 以上保持节奏；70%-89% 优先补齐未完成项；低于 70% 则收缩到 Python、后端、RAG、MCP、LangGraph 和项目主线。</li>
+<li>每次学习记录日期、计划与实际时长、完成内容、代码链接、阻塞问题和下一步；公开笔记只发布脱敏后的总结。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://liuhcc.github.io/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/" data-id="cmt5wgd4m000dvcyy4bmmh223" data-title="大模型人工智能学习：项目计划" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Agent/" rel="tag">Agent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/LLM/" rel="tag">LLM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/RAG/" rel="tag">RAG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" rel="tag">学习计划</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E8%AF%BE%E7%A8%8B%E4%B8%BB%E7%BA%BF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E5%9C%B0%E5%9B%BE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          大模型人工智能学习：课程主线与实践地图
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2026/06/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">博客上线了</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-tree">
+        
+          <li class="category-node">
+            <span class="category-toggle"></span>
+            <a class="category-name" href="/blog/categories/AI/">AI</a>
+            <span class="category-count">7</span>
+            <ul class="category-posts">
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-Agent%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B8%BB%E7%BA%BF/" title="大模型人工智能学习：Agent 项目实战主线">大模型人工智能学习：Agent 项目实战主线</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangChain%E4%B8%8EMCP%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：LangChain 与 MCP 笔记">大模型人工智能学习：LangChain 与 MCP 笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangGraph%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：LangGraph 工作流笔记">大模型人工智能学习：LangGraph 工作流笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E4%BD%93%E9%97%AE%E6%95%B0%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：智能体问数笔记">大模型人工智能学习：智能体问数笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E8%AF%BE%E7%A8%8B%E4%B8%BB%E7%BA%BF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E5%9C%B0%E5%9B%BE/" title="大模型人工智能学习：课程主线与实践地图">大模型人工智能学习：课程主线与实践地图</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/" title="大模型人工智能学习：项目计划">大模型人工智能学习：项目计划</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E7%82%B9%E9%A4%90Agent%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：智能点餐 Agent 笔记">大模型人工智能学习：智能点餐 Agent 笔记</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          <li class="category-node">
+            <span class="category-toggle"></span>
+            <a class="category-name" href="/blog/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+            <span class="category-count">1</span>
+            <ul class="category-posts">
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/06/01/hello-world/" title="博客上线了">博客上线了</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          <li class="category-node">
+            <span class="category-toggle"></span>
+            <a class="category-name" href="/blog/categories/AI/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0/">大模型人工智能学习</a>
+            <span class="category-count">7</span>
+            <ul class="category-posts">
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-Agent%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B8%BB%E7%BA%BF/" title="大模型人工智能学习：Agent 项目实战主线">大模型人工智能学习：Agent 项目实战主线</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangChain%E4%B8%8EMCP%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：LangChain 与 MCP 笔记">大模型人工智能学习：LangChain 与 MCP 笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangGraph%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：LangGraph 工作流笔记">大模型人工智能学习：LangGraph 工作流笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E4%BD%93%E9%97%AE%E6%95%B0%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：智能体问数笔记">大模型人工智能学习：智能体问数笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E8%AF%BE%E7%A8%8B%E4%B8%BB%E7%BA%BF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E5%9C%B0%E5%9B%BE/" title="大模型人工智能学习：课程主线与实践地图">大模型人工智能学习：课程主线与实践地图</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/" title="大模型人工智能学习：项目计划">大模型人工智能学习：项目计划</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E7%82%B9%E9%A4%90Agent%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：智能点餐 Agent 笔记">大模型人工智能学习：智能点餐 Agent 笔记</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Agent/" rel="tag">Agent</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/FastAPI/" rel="tag">FastAPI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/LLM/" rel="tag">LLM</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/LangChain/" rel="tag">LangChain</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/LangGraph/" rel="tag">LangGraph</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MCP/" rel="tag">MCP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RAG/" rel="tag">RAG</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Text-to-SQL/" rel="tag">Text-to-SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" rel="tag">学习计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/" rel="tag">工作流</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/" rel="tag">工具调用</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/08/">八月 2026</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/06/">六月 2026</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E4%BD%93%E9%97%AE%E6%95%B0%E7%AC%94%E8%AE%B0/">大模型人工智能学习：智能体问数笔记</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E7%82%B9%E9%A4%90Agent%E7%AC%94%E8%AE%B0/">大模型人工智能学习：智能点餐 Agent 笔记</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangGraph%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AC%94%E8%AE%B0/">大模型人工智能学习：LangGraph 工作流笔记</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangChain%E4%B8%8EMCP%E7%AC%94%E8%AE%B0/">大模型人工智能学习：LangChain 与 MCP 笔记</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-Agent%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B8%BB%E7%BA%BF/">大模型人工智能学习：Agent 项目实战主线</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="sidebar-resize-handle"></div>
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 liuhcc | Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/blog/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+    <a href="/blog/projects/llm-ai-study/" class="mobile-nav-link">Projects</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+<div id="reading-progress"><div id="reading-progress-bar"></div></div>
+<div id="search-overlay" class="search-overlay" data-search-url="/blog/search.json" role="dialog" aria-modal="true" aria-hidden="true" aria-label="搜索">
+  <div class="search-modal" role="document">
+    <div class="search-header">
+      <input type="text" id="search-input" class="search-input" placeholder="搜索..." autocomplete="off">
+      <button id="search-close" class="search-close" type="button" aria-label="关闭搜索">&times;</button>
+    </div>
+    <div id="search-results" class="search-results" data-placeholder="搜索">
+      <div class="search-hint">搜索</div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/blog/js/search.js"></script>
+
+<button id="back-to-top" type="button" aria-label="返回顶部"><span class="fa fa-chevron-up"></span></button>
+
+  </div>
+</body>
+</html>

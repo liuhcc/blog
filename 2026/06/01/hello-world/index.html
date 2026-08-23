@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>博客上线了 | 代码与智能的实践笔记</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="技术博客,Java,AI,Hexo,编程,开发">
+  <meta name="theme-color" content="#258fb8">
+  
+  <link rel="canonical" href="https://liuhcc.github.io/blog/2026/06/01/hello-world/">
+  <meta name="description" content="总结“代码与智能的实践笔记”的技术选型、内容结构、阅读体验与 GitHub Pages 部署方式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客上线了">
+<meta property="og:url" content="https://liuhcc.github.io/blog/2026/06/01/hello-world/index.html">
+<meta property="og:site_name" content="代码与智能的实践笔记">
+<meta property="og:description" content="总结“代码与智能的实践笔记”的技术选型、内容结构、阅读体验与 GitHub Pages 部署方式。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-01T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-23T14:25:31.274Z">
+<meta property="article:author" content="liuhcc">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="代码与智能的实践笔记" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/blog/favicon.svg">
+  
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">代码与智能的实践笔记</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">记录技术探索、工程实践与 AI 学习</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon" href="#" aria-label="打开导航菜单"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/blog/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/blog/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+          <a class="main-nav-link" href="/blog/projects/llm-ai-study/">Projects</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          
+            <a class="nav-icon" target="_blank" rel="noopener" href="https://github.com/liuhcc"><span class="fa fa-github"></span></a>
+          
+        
+        
+          <a class="nav-icon" href="/blog/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" href="#" title="搜索" aria-label="搜索"><span class="fa fa-search"></span></a>
+        <a class="nav-icon nav-dark-mode-btn" href="#" title="切换深色模式" aria-label="切换深色模式"><span class="fa fa-moon-o"></span></a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+      <div class="outer post-layout">
+        
+          
+<aside id="left-toc">
+  <div class="left-toc-header">
+    <span class="left-toc-title"><span class="fa fa-list"></span> 目录</span>
+  </div>
+  <nav class="left-toc-nav">
+    <ul class="left-toc-sublist"><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#项目定位" class="left-toc-link" data-toc-level="2">项目定位</a></div></li><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#技术方案" class="left-toc-link" data-toc-level="2">技术方案</a></div></li><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#当前体验" class="left-toc-link" data-toc-level="2">当前体验</a></div></li><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#发布方式" class="left-toc-link" data-toc-level="2">发布方式</a></div></li><li class="left-toc-item toc-level-2"><div class="left-toc-item-row"><a href="#接下来的维护原则" class="left-toc-link" data-toc-level="2">接下来的维护原则</a></div></li></ul>
+  </nav>
+  <div class="toc-resize-handle"></div>
+</aside>
+
+
+        
+        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2026/06/01/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2026-06-01T15:00:00.000Z" itemprop="datePublished">2026-06-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/blog/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+  </div>
+
+    
+      <span class="article-reading-time"><span class="fa fa-book"></span> 3 min</span>
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      博客上线了
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+
+<div class="toc-wrap">
+  <div class="toc-header">
+    <span class="toc-title"><span class="fa fa-list"></span> 目录</span>
+    <span class="toc-toggle"><span class="fa fa-chevron-up"></span></span>
+  </div>
+  <div class="toc-body">
+    <ul class="toc-list">
+      
+        <li class="toc-item toc-level-2">
+          <a href="#项目定位" class="toc-link">项目定位</a>
+        </li>
+      
+        <li class="toc-item toc-level-2">
+          <a href="#技术方案" class="toc-link">技术方案</a>
+        </li>
+      
+        <li class="toc-item toc-level-2">
+          <a href="#当前体验" class="toc-link">当前体验</a>
+        </li>
+      
+        <li class="toc-item toc-level-2">
+          <a href="#发布方式" class="toc-link">发布方式</a>
+        </li>
+      
+        <li class="toc-item toc-level-2">
+          <a href="#接下来的维护原则" class="toc-link">接下来的维护原则</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+      
+      
+        <p>这是“代码与智能的实践笔记”的第一篇文章，也作为这个项目的说明页。它由 Hexo 生成静态页面，通过 GitHub Pages 发布，目标是把零散的技术探索沉淀成可随时查阅、持续更新的笔记。</p>
+<h2 id="项目定位"><a href="#项目定位" class="headerlink" title="项目定位"></a>项目定位</h2><p>这里关注两件事：把技术问题讲清楚，以及把学习过程落到可验证的实践上。当前内容主要分为三类：</p>
+<ul>
+<li><strong>工程实践</strong>：开发过程中的方案取舍、问题定位和工具使用经验。</li>
+<li><strong>AI 学习</strong>：围绕 RAG、MCP、LangChain、LangGraph 和 Agent 项目的学习笔记。</li>
+<li><strong>项目复盘</strong>：学习计划、阶段目标、实现边界与后续改进方向。</li>
+</ul>
+<p>文章以 Markdown 维护，优先记录问题背景、方案选择、关键实现、验证方式和下一步。课程类内容只发布自主整理的总结与实验结论，不转载原始课件、视频、完整源码或任何私有配置。</p>
+<h2 id="技术方案"><a href="#技术方案" class="headerlink" title="技术方案"></a>技术方案</h2><p>站点选择 Hexo 的原因很直接：它基于 Node.js，生成速度快，Markdown 写作体验成熟，并且允许按需修改主题模板和样式。项目基于 Landscape 主题进行定制，保持轻量的同时补足移动端阅读和日常检索所需的能力。</p>
+<p>站点地址配置为 GitHub Pages 的项目路径，所有页面使用相对根路径生成，确保文章、分类、标签、搜索索引和静态资源在 <code>/blog/</code> 下都能正确访问。</p>
+<h2 id="当前体验"><a href="#当前体验" class="headerlink" title="当前体验"></a>当前体验</h2><ul>
+<li>首页支持文章展开与收起，方便快速浏览摘要。</li>
+<li>文章页提供目录、高亮定位、阅读进度和返回顶部，长文阅读更顺畅。</li>
+<li>内置深色模式，并适配桌面和移动端布局。</li>
+<li>顶部搜索基于站内 <code>search.json</code> 索引，不依赖第三方服务；支持标题与正文检索、关键词高亮、Esc 关闭以及方向键选择结果。</li>
+<li>分类、标签、归档、RSS、站点地图、robots 和 404 页面均已生成，便于阅读与检索。</li>
+</ul>
+<h2 id="发布方式"><a href="#发布方式" class="headerlink" title="发布方式"></a>发布方式</h2><p>源码在 <code>source</code> 分支维护。每次推送到该分支后，GitHub Actions 会使用 Node.js 20 安装锁定依赖、执行 Hexo 静态生成，并将生成结果发布到 <code>main</code> 分支，由 GitHub Pages 对外提供访问。</p>
+<p>这种方式把写作、构建与上线分开：日常只需维护 Markdown 和主题代码，线上页面由自动化流程统一生成，避免手工上传静态文件带来的遗漏。</p>
+<h2 id="接下来的维护原则"><a href="#接下来的维护原则" class="headerlink" title="接下来的维护原则"></a>接下来的维护原则</h2><ol>
+<li>每篇文章保持明确主题，补充可复现的代码、命令或检查清单。</li>
+<li>涉及服务地址、账号、密钥、个人信息和课程原始资料时，先脱敏再发布。</li>
+<li>先在本地验证链接、搜索和移动端阅读，再推送触发线上构建。</li>
+<li>持续围绕大模型应用的工程化能力更新内容，包括检索、工具调用、工作流、评测与交付。</li>
+</ol>
+<p>博客已经上线，后续的每一次学习和实践，都会在这里留下可回顾、可检索的记录。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://liuhcc.github.io/blog/2026/06/01/hello-world/" data-id="cmt5wgd4f0003vcyy8gjh7c39" data-title="博客上线了" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          大模型人工智能学习：项目计划
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-tree">
+        
+          <li class="category-node">
+            <span class="category-toggle"></span>
+            <a class="category-name" href="/blog/categories/AI/">AI</a>
+            <span class="category-count">7</span>
+            <ul class="category-posts">
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-Agent%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B8%BB%E7%BA%BF/" title="大模型人工智能学习：Agent 项目实战主线">大模型人工智能学习：Agent 项目实战主线</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangChain%E4%B8%8EMCP%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：LangChain 与 MCP 笔记">大模型人工智能学习：LangChain 与 MCP 笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangGraph%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：LangGraph 工作流笔记">大模型人工智能学习：LangGraph 工作流笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E4%BD%93%E9%97%AE%E6%95%B0%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：智能体问数笔记">大模型人工智能学习：智能体问数笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E8%AF%BE%E7%A8%8B%E4%B8%BB%E7%BA%BF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E5%9C%B0%E5%9B%BE/" title="大模型人工智能学习：课程主线与实践地图">大模型人工智能学习：课程主线与实践地图</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/" title="大模型人工智能学习：项目计划">大模型人工智能学习：项目计划</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E7%82%B9%E9%A4%90Agent%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：智能点餐 Agent 笔记">大模型人工智能学习：智能点餐 Agent 笔记</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          <li class="category-node">
+            <span class="category-toggle"></span>
+            <a class="category-name" href="/blog/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
+            <span class="category-count">1</span>
+            <ul class="category-posts">
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/06/01/hello-world/" title="博客上线了">博客上线了</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          <li class="category-node">
+            <span class="category-toggle"></span>
+            <a class="category-name" href="/blog/categories/AI/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0/">大模型人工智能学习</a>
+            <span class="category-count">7</span>
+            <ul class="category-posts">
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-Agent%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B8%BB%E7%BA%BF/" title="大模型人工智能学习：Agent 项目实战主线">大模型人工智能学习：Agent 项目实战主线</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangChain%E4%B8%8EMCP%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：LangChain 与 MCP 笔记">大模型人工智能学习：LangChain 与 MCP 笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangGraph%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：LangGraph 工作流笔记">大模型人工智能学习：LangGraph 工作流笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E4%BD%93%E9%97%AE%E6%95%B0%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：智能体问数笔记">大模型人工智能学习：智能体问数笔记</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E8%AF%BE%E7%A8%8B%E4%B8%BB%E7%BA%BF%E4%B8%8E%E5%AE%9E%E8%B7%B5%E5%9C%B0%E5%9B%BE/" title="大模型人工智能学习：课程主线与实践地图">大模型人工智能学习：课程主线与实践地图</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92/" title="大模型人工智能学习：项目计划">大模型人工智能学习：项目计划</a>
+                </li>
+              
+                <li class="post-leaf">
+                  <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E7%82%B9%E9%A4%90Agent%E7%AC%94%E8%AE%B0/" title="大模型人工智能学习：智能点餐 Agent 笔记">大模型人工智能学习：智能点餐 Agent 笔记</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Agent/" rel="tag">Agent</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/FastAPI/" rel="tag">FastAPI</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/LLM/" rel="tag">LLM</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/LangChain/" rel="tag">LangChain</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/LangGraph/" rel="tag">LangGraph</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/MCP/" rel="tag">MCP</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/RAG/" rel="tag">RAG</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Text-to-SQL/" rel="tag">Text-to-SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/" rel="tag">学习计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/" rel="tag">工作流</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/" rel="tag">工具调用</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/08/">八月 2026</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/06/">六月 2026</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E4%BD%93%E9%97%AE%E6%95%B0%E7%AC%94%E8%AE%B0/">大模型人工智能学习：智能体问数笔记</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-%E6%99%BA%E8%83%BD%E7%82%B9%E9%A4%90Agent%E7%AC%94%E8%AE%B0/">大模型人工智能学习：智能点餐 Agent 笔记</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangGraph%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%AC%94%E8%AE%B0/">大模型人工智能学习：LangGraph 工作流笔记</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-LangChain%E4%B8%8EMCP%E7%AC%94%E8%AE%B0/">大模型人工智能学习：LangChain 与 MCP 笔记</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2026/08/23/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%AD%A6%E4%B9%A0-Agent%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B8%BB%E7%BA%BF/">大模型人工智能学习：Agent 项目实战主线</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="sidebar-resize-handle"></div>
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+        &copy; 2026 liuhcc | Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/blog/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/blog/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+    <a href="/blog/projects/llm-ai-study/" class="mobile-nav-link">Projects</a>
+  
+</nav>
+    
+
+
+<script src="/blog/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/blog/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+
+<div id="reading-progress"><div id="reading-progress-bar"></div></div>
+<div id="search-overlay" class="search-overlay" data-search-url="/blog/search.json" role="dialog" aria-modal="true" aria-hidden="true" aria-label="搜索">
+  <div class="search-modal" role="document">
+    <div class="search-header">
+      <input type="text" id="search-input" class="search-input" placeholder="搜索..." autocomplete="off">
+      <button id="search-close" class="search-close" type="button" aria-label="关闭搜索">&times;</button>
+    </div>
+    <div id="search-results" class="search-results" data-placeholder="搜索">
+      <div class="search-hint">搜索</div>
+    </div>
+  </div>
+</div>
+
+
+<script src="/blog/js/search.js"></script>
+
+<button id="back-to-top" type="button" aria-label="返回顶部"><span class="fa fa-chevron-up"></span></button>
+
+  </div>
+</body>
+</html>
